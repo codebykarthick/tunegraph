@@ -2,14 +2,13 @@ app:
   name: TuneGraph
 
 data:
-  mpd_json: "/path/to/million-playlist-dataset/playlist.json"
-  output_dir: "./data/processed"
+  limited: true
 
 # Model hyperparameters
 model:
   embedding_dim: 64
   num_layers: 3
-  num_factors: 4   # DGCF disentangled factors
+  num_intents: 4   # DGCF disentangled factors
   reg_weight: 1e-4
 
 # Training settings
@@ -18,3 +17,4 @@ train:
   lr: 1e-4
   epochs: 50
   eval_every: 1
+  num_workers: 12

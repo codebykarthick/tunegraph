@@ -6,7 +6,7 @@ CONFIG_PATH = "./config/default.yml"
 config = None
 
 
-def load_config(config_path: str) -> Dict[str, Any]:
+def load_config(config_path: str = "") -> Dict[str, Any]:
     """Load the YAML configuration file as a dictionary for usage.
 
     Args:
@@ -19,7 +19,7 @@ def load_config(config_path: str) -> Dict[str, Any]:
 
     if config is None:
         # If no path is sent.
-        if config_path is None:
+        if config_path == "":
             config_path = CONFIG_PATH
 
         with open(config_path) as f:
